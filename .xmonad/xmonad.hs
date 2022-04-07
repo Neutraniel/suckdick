@@ -116,7 +116,7 @@ myStartupHook = do
 
 
     spawnOnce "lxsession"
-    spawnOnce "picom"
+    spawnOnce "picom --config /home/neutraniel/.config/picom/xmonad/picom.conf"
     spawnOnce "nm-applet"
     spawnOnce "setxkbmap gb"
     spawnOnce "nvidia-settings -l"
@@ -413,11 +413,6 @@ myKeys =
         , ("C-M1-k", incWindowSpacing 4)         -- Increase window spacing
         , ("C-M1-h", decScreenSpacing 4)         -- Decrease screen spacing
         , ("C-M1-l", incScreenSpacing 4)         -- Increase screen spacing
-
-    -- KB_GROUP Grid Select (CTR-g followed by a key)
-        , ("C-g g", spawnSelected' myAppGrid)                 -- grid select favorite apps
-        , ("C-g t", goToSelected $ mygridConfig myColorizer)  -- goto selected window
-        , ("C-g b", bringSelected $ mygridConfig myColorizer) -- bring selected window
 
     -- KB_GROUP Windows navigation
         , ("M-m", windows W.focusMaster)  -- Move focus to the master window
